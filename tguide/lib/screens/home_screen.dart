@@ -56,7 +56,7 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Scaffold(
-        appBar: AppBar(title: Text(restaurantText,
+        appBar: AppBar(title: Text("Home",
           style: GoogleFonts.jetBrainsMono(
               fontWeight: FontWeight.w900,color: Colors.black),),
           backgroundColor:
