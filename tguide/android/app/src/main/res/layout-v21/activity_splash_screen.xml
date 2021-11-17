@@ -2,24 +2,38 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SplashScreen">
+    android:background="@drawable/launch_background"
+    tools:context="SplashScreen">
+
+
+    <View
+        android:id="@+id/background"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#9A0064"
+        app:layout_constraintBottom_toBottomOf="@+id/constraintLayout"
+        app:layout_constraintEnd_toEndOf="@+id/constraintLayout"
+        app:layout_constraintStart_toStartOf="@+id/constraintLayout"
+        app:layout_constraintTop_toTopOf="@+id/constraintLayout" />
 
 
     <ImageView
         android:id="@+id/imglogo"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
+        android:layout_width="195dp"
+        android:layout_height="195dp"
         android:layout_centerInParent="true"
-        android:src="@mipmap/ic_launcher"
+        android:contentDescription="@string/todo"
+        android:adjustViewBounds="true"
+        android:src="@drawable/logo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.412"
-        android:contentDescription="TODO" />
+        app:layout_constraintVertical_bias="0.412" />
 
     <TextView
         android:id="@+id/text1"
@@ -29,26 +43,32 @@
         android:layout_marginTop="28dp"
         android:gravity="center_horizontal"
         android:text="@string/tguide"
-        android:textColor="@android:color/black"
-        android:textSize="40sp"
+        android:textColor="@android:color/white"
+        android:textSize="50sp"
         android:textStyle="bold"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imglogo"
+        android:fontFamily="serif"
         tools:ignore="MissingConstraints" />
 
     <ProgressBar
         android:id="@+id/progressBarId"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="204dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="120dp"
         android:progressBackgroundTint="#B5B5B5"
-        android:progressTint="#E91E63"
+        android:progressTint="#FFF"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text1" />
+        app:layout_constraintTop_toBottomOf="@+id/text1"
+        app:layout_constraintVertical_bias="0.0"
+        tools:targetApi="lollipop" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
