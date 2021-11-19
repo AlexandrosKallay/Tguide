@@ -63,7 +63,6 @@ class _MyAppState extends State<MyApp> {
         LoginScreen.id: (context) => LoginScreen(),
         RegistrationScreen.id: (context) => RegistrationScreen(),
         MyHomeScreen.id: (context) => MyHomeScreen(app: app),
-
       },
       home: LoginScreen(),
       debugShowCheckedModeBanner: false,
