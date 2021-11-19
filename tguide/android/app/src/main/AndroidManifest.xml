@@ -10,12 +10,14 @@
         android:label="Tguide"
 
         android:theme="@style/LaunchTheme">
+
+
         <activity
             android:name=".SplashScreen"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
             android:hardwareAccelerated="true"
             android:launchMode="singleTop"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:windowSoftInputMode="adjustResize">
 
             <intent-filter>
@@ -24,6 +26,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
         <activity android:name=".MainActivity" />
         <meta-data
             android:name="flutterEmbedding"

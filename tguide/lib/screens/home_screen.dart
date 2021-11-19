@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:tguide/size_config.dart';
 import 'package:tguide/strings/main_strings.dart';
 import 'package:tguide/view_model/main_view_model_imp.dart';
+import 'package:tguide/widgets/common/appbar.dart';
 
 import 'package:tguide/widgets/common/maindrawer.dart';
 import 'package:tguide/widgets/destination_carousel.dart';
@@ -31,7 +32,6 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
 
   User? user = FirebaseAuth.instance.currentUser;
   UserModel loggedInUser = UserModel();
-
 
   final FirebaseApp app;
   final viewModel = MainViewModelImp();
@@ -56,17 +56,9 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Scaffold(
-        appBar: AppBar(title: Text("Home",
-          style: GoogleFonts.jetBrainsMono(
-              fontWeight: FontWeight.w900,color: Colors.black),),
-          backgroundColor:
-          Colors.white,
-          elevation: 10,
-          iconTheme: IconThemeData(color: Colors.black),
-          centerTitle: true,
-        ),
+        appBar: MainAppBar('HOME'),
         drawer: Drawer(
-            child:MainDrawer(),
+            child:MainDrawer(app: app),
         ),
         body: SafeArea(
             child: CustomScrollView(
@@ -78,12 +70,6 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
                       RestaurantCarousel(),
                       DestinationCarousel(),
                       HotelCarousel(),
-                      //CarouselDemo(),
-
-                      // Container(color: Colors.green),
-                      // Container(color: Colors.orange),
-                      // Container(color: Colors.yellow),
-                      // Container(color: Colors.pink),
                     ],
                   ),
                 ),

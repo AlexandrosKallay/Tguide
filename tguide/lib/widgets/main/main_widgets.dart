@@ -44,9 +44,7 @@ class DestinationImageWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: getProportionateScreenWidth(70),
-      child: Card( semanticContainer: true,
-        clipBehavior: Clip.antiAliasWithSaveLayer,
-        child: CachedNetworkImage(
+      child: CachedNetworkImage(
           colorBlendMode: BlendMode
               .saturation,
           height: getProportionateScreenWidth(75),
@@ -68,7 +66,6 @@ class DestinationImageWidget extends StatelessWidget {
         //       Center(child: CircularProgressIndicator(),
         //       ),
         // ),
-      ),
     );
   }
 }
