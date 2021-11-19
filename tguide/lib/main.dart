@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:math';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -16,6 +17,8 @@ Future<void> main() async {
 
 
 class MyApp extends StatefulWidget {
+
+
   final FirebaseApp app;
 
   const MyApp({Key? key, required this.app}) : super(key: key);
@@ -33,6 +36,27 @@ class _MyAppState extends State<MyApp> {
 
   late StreamSubscription<User?> user;
   void initState() {
+    // var ran = Random();
+    //
+    // for (var i = 0; i < 5; i++) {
+    //   var heading = '\$${(ran.nextInt(20) + 15).toString()}00 per month';
+    //   var subheading =
+    //       '${(ran.nextInt(3) + 1).toString()} bed, ${(ran.nextInt(2) + 1).toString()} bath, ${(ran.nextInt(10) + 7).toString()}00 sqft';
+    //   var cardImage = NetworkImage(
+    //       'https://source.unsplash.com/random/800x600?house&' +
+    //           ran.nextInt(100).toString());
+    //   var supportingText =
+    //       'Beautiful home, recently refurbished with modern appliances...';
+    //   var cardData = {
+    //     'heading': heading,
+    //     'subheading': subheading,
+    //     'cardImage': cardImage,
+    //     'supportingText': supportingText,
+    //   };
+    //   //cardContent.add(cardData);
+    // }
+
+
     super.initState();
     user = FirebaseAuth.instance.authStateChanges().listen((user) {
       if (user == null) {

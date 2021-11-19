@@ -2,7 +2,6 @@ import 'package:auto_animated/auto_animated.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:tguide/const/const.dart';
-import 'package:tguide/models/destination_model.dart';
 import 'package:tguide/models/restaurant_model.dart';
 import 'package:tguide/theme.dart';
 import 'package:tguide/view_model/main_view_model_imp.dart';
@@ -124,7 +123,7 @@ class DestinationCarousel extends StatelessWidget {
                                                   tag: lst[index].imageUrl,
                                                   child: ClipRRect(
                                                     borderRadius: BorderRadius
-                                                        .circular(20.0),
+                                                        .circular(10.0),
                                                     child: DestinationImageWidget(imageUrl: lst[index].imageUrl),
                                                   ),
                                                 ),
