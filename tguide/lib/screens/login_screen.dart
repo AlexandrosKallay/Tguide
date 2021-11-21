@@ -1,5 +1,4 @@
 import 'package:firebase_core/firebase_core.dart';
-import 'package:tguide/main.dart';
 import 'package:tguide/screens/home_screen.dart';
 import 'package:tguide/screens/registration_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -9,6 +8,7 @@ import 'package:tguide/theme.dart';
 
 
 class LoginScreen extends StatefulWidget {
+  String get routeName => '/';
   static String id = 'Login';
   const LoginScreen({Key? key}) : super(key: key);
 
@@ -17,6 +17,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+
   // form key
   final _formKey = GlobalKey<FormState>();
 
@@ -29,6 +30,9 @@ class _LoginScreenState extends State<LoginScreen> {
 
   // string for displaying the error Message
   String? errorMessage;
+
+
+
 
   @override
   Widget build(BuildContext context) {

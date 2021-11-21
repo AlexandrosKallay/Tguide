@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:tguide/models/user_model.dart';
 import 'package:tguide/screens/currency_conventer_screen.dart';
 import 'package:tguide/screens/home_screen.dart';
-import 'package:tguide/screens/login_screen.dart';
 import 'package:tguide/theme.dart';
 
 
@@ -40,8 +39,9 @@ class _MainDrawerState extends State<MainDrawer>{
       this.loggedInUser = UserModel.fromMap(value.data());
       setState(() {});
     });
-  }
 
+
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -51,18 +51,23 @@ class _MainDrawerState extends State<MainDrawer>{
 
   showAlertDialog(BuildContext context) {
     // set up the buttons
-    Widget cancelButton = FlatButton(
+    Widget cancelButton = ElevatedButton(
       child: Text("Cancel"),
       onPressed:  () {
         Navigator.pop(context);
       },
     );
-    Widget continueButton = FlatButton(
+    Widget continueButton = ElevatedButton(
       child: Text("Continue"),
       onPressed:  () async {
         await FirebaseAuth.instance.signOut();
-        Navigator.of(context).pushReplacement(
-            MaterialPageRoute(builder: (context) => LoginScreen()));
+
+        Navigator.popUntil(context, ModalRoute.withName('login'));
+        Navigator.pop(context);
+
+
+
+
       },
     );
     // set up the AlertDialog
