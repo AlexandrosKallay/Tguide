@@ -1,13 +1,11 @@
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import 'package:tguide/models/user_model.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:tguide/size_config.dart';
-import 'package:tguide/strings/main_strings.dart';
 import 'package:tguide/view_model/main_view_model_imp.dart';
 import 'package:tguide/widgets/common/appbar.dart';
 
@@ -48,7 +46,7 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
         .get()
         .then((value) {
       this.loggedInUser = UserModel.fromMap(value.data());
-      setState(() {});
+      //setState(() {});
     });
   }
 

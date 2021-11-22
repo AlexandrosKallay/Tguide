@@ -10,9 +10,6 @@ class MainAppBar extends AppBar {
   MainAppBar(this._stringitle);
 
 
-
-
-
   @override
   _MainAppBarState createState() => _MainAppBarState(_stringitle);
 }
