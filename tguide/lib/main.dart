@@ -50,20 +50,11 @@ class _MyAppState extends State<MyApp> {
         event != null ? 'home' : 'login',
       );
     });
-
-    // user = FirebaseAuth.instance.authStateChanges().listen((user) {
-    //   if (user == null) {
-    //     print('User is currently signed out!');
-    //   } else {
-    //     print('User is signed in!');
-    //   }
-    // });
   }
 
   @override
   void dispose() {
     _sub.cancel();
-    //user.cancel();
     super.dispose();
   }
 
@@ -76,7 +67,6 @@ class _MyAppState extends State<MyApp> {
       navigatorKey: _navigatorKey,
       initialRoute:
       FirebaseAuth.instance.currentUser == null ? 'login' : 'home',
-
       onGenerateRoute: (settings) {
         switch (settings.name) {
           case 'home':

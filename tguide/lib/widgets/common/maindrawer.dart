@@ -61,13 +61,7 @@ class _MainDrawerState extends State<MainDrawer>{
       child: Text("Continue"),
       onPressed:  () async {
         await FirebaseAuth.instance.signOut();
-
         Navigator.popUntil(context, ModalRoute.withName('login'));
-        Navigator.pop(context);
-
-
-
-
       },
     );
     // set up the AlertDialog
