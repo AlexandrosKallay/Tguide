@@ -66,25 +66,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       navigatorKey: _navigatorKey,
       initialRoute:
-      FirebaseAuth.instance.currentUser == null ? 'login' : 'home',
-      onGenerateRoute: (settings) {
-        switch (settings.name) {
-          case 'home':
-            return MaterialPageRoute(
-              settings: settings,
-              builder: (_) => MyHomeScreen(app: app),
-            );
-          case 'login':
-            return MaterialPageRoute(
-              settings: settings,
-              builder: (_) => LoginScreen(),
-            );
-          default:
-            return MaterialPageRoute(
-              settings: settings,
-              builder: (_) => RegistrationScreen(),
-            );
-        }
+
       },
       home: LoginScreen(),
       debugShowCheckedModeBanner: false,
